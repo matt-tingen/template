@@ -1,0 +1,38 @@
+{
+  "author": "Matt Tingen <matt.tingen@gmail.com>",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "ts": "tsc --watch",
+    "build:js": "parcel build src/index.html",
+    "build:static": "cp -Rf static/* dist",
+    "build": "yarn build:js --no-source-maps && yarn build:static",
+    "build:preview": "yarn build:js && yarn build:static",
+    "rebuild": "yarn clean:dist && yarn build",
+    "clean:dist": "rm -rf dist",
+    "clean:cache": "rm -rf .parcel-cache",
+    "clean": "yarn clean:dist && yarn clean:cache",
+    "analyze": "yarn build:js --reporter @parcel/reporter-bundle-analyzer && open parcel-bundle-reports/default.html",
+    "lint": "eslint src",
+    "format": "prettier --write src",
+    "prune": "ts-prune | grep -v '(used in module)'"
+  },
+  "browserslist": [
+    "last 2 Firefox versions"
+  ],
+  "devDependencies": {
+    "@matt-tingen/eslint-config": "^0.3.3",
+    "@types/lodash": "^4.14.178",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7",
+    "parcel": "^2.2.1",
+    "prettier": "^2.5.1",
+    "ts-prune": "^0.10.3",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
