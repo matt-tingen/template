@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 import { StrictMode } from 'react';
@@ -15,11 +15,14 @@ const emotionCache = createCache({
 emotionCache.compat = true;
 
 export const Root = () => (
-  <StrictMode>
-    <CacheProvider value={emotionCache}>
-      <ChakraProvider>
-        <App />
-      </ChakraProvider>
-    </CacheProvider>
-  </StrictMode>
+  <>
+    <ColorModeScript initialColorMode="system" />
+    <StrictMode>
+      <CacheProvider value={emotionCache}>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+      </CacheProvider>
+    </StrictMode>
+  </>
 );
