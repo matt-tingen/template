@@ -1,6 +1,6 @@
+import { assert } from '@matt-tingen/util';
 import { render } from 'react-dom';
 import { Root } from './Root';
-import { assert } from './util/assert';
 
 const root = document.getElementById('root');
 
