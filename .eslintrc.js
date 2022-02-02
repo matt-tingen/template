@@ -3,10 +3,5 @@ require('@matt-tingen/eslint-config/patch');
 
 module.exports = {
   root: true,
-  extends: ['@matt-tingen/eslint-config'],
-  rules: {
-    // Modern JSX transform
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
-  },
+  extends: ['@matt-tingen/eslint-config', 'plugin:react/jsx-runtime'],
 };

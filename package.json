@@ -35,6 +35,7 @@
     "@emotion/cache": "^11.7.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@matt-tingen/util": "^2.0.0",
     "framer-motion": "^5",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
